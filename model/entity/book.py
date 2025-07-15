@@ -1,5 +1,6 @@
 from model.tools.validation import *
 
+
 class Book:
     def __init__(self, code, title, author, price, edition, publisher, number):
         self.code = code
@@ -31,7 +32,6 @@ class Book:
         author_validator(value)
         self._author = value
 
-
     @property
     def price(self):
         return self._price
@@ -40,3 +40,30 @@ class Book:
     def price(self, value):
         price_validator(value)
         self._price = value
+
+    @property
+    def edition(self):
+        return self._edition
+
+    @edition.setter
+    def edition(self, value):
+        edition_validator(value)
+        self._edition = value
+
+    @property
+    def publisher(self):
+        return self._publisher
+
+    @publisher.setter
+    def publisher(self, value):
+        publisher_validator(value)
+        self._publisher = value
+
+    @property
+    def number(self):
+        return self._number
+
+    @number.setter
+    def number(self, value):
+        number_validator(value)
+        self._number = value

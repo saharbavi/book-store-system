@@ -1,11 +1,10 @@
 from model.tools.validation import *
 
 class User:
-    def __init__(self, user_id, first_name, last_name, phone_number, username,password,role):
+    def __init__(self, user_id, first_name, last_name, username,password,role):
         self.user_id = user_id
         self.first_name = first_name
         self.last_name = last_name
-        self.phone_number = phone_number
         self.username = username
         self.password = password
         self.role = role
@@ -13,6 +12,15 @@ class User:
 
     def __repr__(self):
         return f"{self.__dict__}"
+
+    @property
+    def user_id(self):
+        return self._user_id
+
+    @user_id.setter
+    def user_id(self, value):
+        user_id_validation(value)
+        self._user_id = value
 
     @property
     def first_name(self):
@@ -32,14 +40,6 @@ class User:
         last_name_validator(value)
         self._last_name = value
 
-    @property
-    def phone_number(self):
-        return self._phone_number
-
-    @phone_number.setter
-    def phone_number(self, value):
-        phone_number_validator(value)
-        self._phone_number = value
 
     @property
     def username(self):
