@@ -30,3 +30,13 @@ class Book:
     def author(self, value):
         author_validator(value)
         self._author = value
+
+
+    @property
+    def price(self):
+        return self._price
+
+    @price.setter
+    def price(self, value):
+        price_validator(value)
+        self._price = value
