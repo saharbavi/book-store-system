@@ -1,6 +1,5 @@
 import re
 
-
 def user_id_validation(user_id):
     pass
 
@@ -26,7 +25,6 @@ def password_validator(password):
 
 def role_validator(role):
     pass
-
 
 def title_validator(title):
     if not re.match(r"^[a-zA-Z\s]{3,30}$", title):

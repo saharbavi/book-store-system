@@ -1,13 +1,14 @@
 from model.tools.validation import *
 
 class User:
-    def __init__(self, user_id, first_name, last_name, username,password,role):
+    def __init__(self, user_id, first_name, last_name, username,password,role,locked=False):
         self.user_id = user_id
         self.first_name = first_name
         self.last_name = last_name
         self.username = username
         self.password = password
         self.role = role
+        self.locked = locked
 
 
     def __repr__(self):
