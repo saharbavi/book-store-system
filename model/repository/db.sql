@@ -4,7 +4,6 @@ INSERT INTO USER
 values
     (2,'sahel','saheli','sahelsal','sahel123','admin',1);
 
-
 --find_all
 select *
 from USER
@@ -15,8 +14,10 @@ UPDATE USER SET first_name='sahar',last_name='summer',username='saharsum',passwo
 where user_id=1;
 
 --delete
+delete from USER where user_id=8;
 
-delete from USER where user_id=1;
+
+
 
 
 

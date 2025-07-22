@@ -1,8 +1,9 @@
+import os
 import sqlite3
 
 def create_database():
     # اتصال
-    connection = sqlite3.connect("bookstore_db.sqlite")
+    connection = sqlite3.connect("C:/Users/acer/Desktop/book-store-system/bookstore_db.sqlite")
 
     # ساخت جدول
     # عملیات ذخیره، ویرایش، حذف و انواع جستجو و گزارش
@@ -51,3 +52,5 @@ def create_database():
     # # قطع اتصال
     cursor.close()
     connection.close()
+
+
