@@ -1,4 +1,4 @@
-from model.repository.database_creator import *
+# from model.repository.database_creator import *
 import sqlite3
 
 class UserRepository:
@@ -48,24 +48,34 @@ class UserRepository:
     def find_all(self):
         self.connect()
         self.cursor.execute("SELECT * FROM USER")
+        user_list = self.cursor.fetchall()
         self.disconnect()
+        return user_list
 
     def find_by_user_id(self, user_id):
         self.connect()
         self.cursor.execute("SELECT * FROM USER WHERE user_id=?", [user_id])
+        user=self.cursor.fetchone()
         self.disconnect()
+        return user
 
     def find_by_first_name_last_name(self, first_name,last_name):
         self.connect()
         self.cursor.execute("SELECT * FROM USER WHERE first_name=? and last_name=?", [first_name,last_name])
+        user_list = self.cursor.fetchall()
         self.disconnect()
+        return user_list
 
     def find_by_username(self, username):
         self.connect()
         self.cursor.execute("SELECT * FROM USER WHERE username=?", [username])
+        user = self.cursor.fetchone()
         self.disconnect()
+        return user
 
     def find_by_username_password(self, username,password):
         self.connect()
         self.cursor.execute("SELECT * FROM USER WHERE username=? and password=?", [username,password])
+        user = self.cursor.fetchone()
         self.disconnect()
+        return user

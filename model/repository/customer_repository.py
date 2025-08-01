@@ -4,7 +4,7 @@ import sqlite3
 class CustomerRepository:
     # connect/disconnect to database
     def connect(self):
-        self.connection = sqlite3.connect("bookstore_db.sqlite")
+        self.connection = sqlite3.connect("C:/Users/acer/Desktop/book-store-system/model/repository/bookstore_db.sqlite")
         self.cursor = self.connection.cursor()
 
     def disconnect(self, commit=False):
@@ -33,7 +33,7 @@ class CustomerRepository:
             """
                 UPDATE CUSTOMER SET first_name=?,last_name=?,phone_number=?,address=? where custom_id=?
                 """,
-            [customer.custom_id, customer.first_name, customer.last_name, customer.phone_number, customer.address]
+            [customer.first_name, customer.last_name, customer.phone_number, customer.address,customer.custom_id]
         )
         self.disconnect(commit=True)
 

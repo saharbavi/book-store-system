@@ -3,7 +3,7 @@ import sqlite3
 class BookRepository:
     #connect/disconnect to database
     def connect(self):
-        self.connection = sqlite3.connect("bookstore_db.sqlite")
+        self.connection = sqlite3.connect("C:/Users/acer/Desktop/book-store-system/model/repository/bookstore_db.sqlite")
         self.cursor = self.connection.cursor()
 
     def disconnect(self, commit=False):
@@ -31,7 +31,7 @@ class BookRepository:
             """
                 UPDATE BOOK SET title=?,author=?,price=?,edition=?,publisher=?,number=? where code=?
                 """,
-            [book.code,book.title,book.author,book.price,book.edition,book.publisher,book.number]
+            [book.title,book.author,book.price,book.edition,book.publisher,book.number,book.code]
         )
         self.disconnect(commit=True)
 
