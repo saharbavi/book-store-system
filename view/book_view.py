@@ -2,7 +2,7 @@ from view import *
 from controller.book_controller import BookController
 from model.entity.book import Book
 from model.tools.data_list import publisher_list
-
+#
 class BookView:
 
     def save_click(self):

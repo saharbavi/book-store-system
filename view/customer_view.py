@@ -2,7 +2,6 @@ from view import *
 from controller.customer_controller import CustomerController
 from model.entity.customer import Customer
 
-
 class CustomerView:
 
     def save_click(self):

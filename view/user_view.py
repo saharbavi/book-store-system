@@ -2,7 +2,6 @@ from view import *
 from controller.user_controller import UserController
 from model.entity.user import User
 
-
 class UserView:
 
     def save_click(self):
