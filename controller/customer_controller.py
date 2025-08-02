@@ -1,7 +1,6 @@
 from model.entity.customer import Customer
 from model.repository.customer_repository import CustomerRepository
 
-
 class CustomerController:
     def save(self, custom_id, first_name, last_name, phone_number, address):
         try:
