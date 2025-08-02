@@ -6,5 +6,7 @@ from view.customer_view import CustomerView
 create_database()
 
 # ui=UserView()
+
 ui=BookView()
+
 # ui=CustomerView()
