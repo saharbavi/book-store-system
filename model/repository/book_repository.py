@@ -45,34 +45,41 @@ class BookRepository:
     def find_all(self):
         self.connect()
         self.cursor.execute("SELECT * FROM BOOK")
+        book_list = self.cursor.fetchall()
         self.disconnect()
+        return book_list
 
     def find_by_code(self, code):
         self.connect()
         self.cursor.execute("SELECT * FROM BOOK WHERE code=?", [code])
+        book=self.cursor.fetchone()
         self.disconnect()
+        return book
 
-    def find_by_title(self, title):
+    def find_by_title_author(self, title, author):
         self.connect()
-        self.cursor.execute("SELECT * FROM BOOK WHERE title=?", [title])
+        self.cursor.execute("SELECT * FROM BOOK WHERE title like ? and author like ?" , [title+"%", author+"%"])
+        book_list = self.cursor.fetchall()
         self.disconnect()
-
-    def find_by_author(self, author):
-        self.connect()
-        self.cursor.execute("SELECT * FROM BOOK WHERE author=?", [author])
-        self.disconnect()
+        return book_list
 
     def find_by_publisher(self, publisher):
         self.connect()
         self.cursor.execute("SELECT * FROM BOOK WHERE publisher=?", [publisher])
+        book = self.cursor.fetchone()
         self.disconnect()
+        return book
 
     def find_by_edition(self, edition):
         self.connect()
         self.cursor.execute("SELECT * FROM BOOK WHERE edition=?", [edition])
+        book = self.cursor.fetchone()
         self.disconnect()
+        return book
 
     def find_by_price(self, price):
         self.connect()
         self.cursor.execute("SELECT * FROM BOOK WHERE price=?", [price])
+        book = self.cursor.fetchone()
         self.disconnect()
+        return book

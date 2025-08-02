@@ -1,6 +1,5 @@
 import sqlite3
 
-
 class CustomerRepository:
     # connect/disconnect to database
     def connect(self):
@@ -47,10 +46,21 @@ class CustomerRepository:
     def find_all(self):
         self.connect()
         self.cursor.execute("SELECT * FROM CUSTOMER")
+        customer_list = self.cursor.fetchall()
         self.disconnect()
+        return customer_list
 
 
     def find_by_custom_id(self, custom_id):
         self.connect()
         self.cursor.execute("SELECT * FROM CUSTOMER WHERE custom_id=?", [custom_id])
+        customer = self.cursor.fetchone()
         self.disconnect()
+        return customer
+
+    def find_by_first_name_last_name(self, first_name,last_name):
+        self.connect()
+        self.cursor.execute("select * from CUSTOMER where first_name like ? and last_name like ?", [first_name+"%",last_name+"%"])
+        customer_list = self.cursor.fetchall()
+        self.disconnect()
+        return customer_list

@@ -12,7 +12,8 @@ def last_name_validator(last_name):
         raise ValueError("Invalid last name !!!")
 
 def phone_number_validator(phone_number):
-    if not re.match(r"^(09|\+989)\d{9}$", phone_number):
+    phone_number=str(phone_number)
+    if not re.match(r"^(09\d{9}|9\d{9})$", phone_number):
         raise ValueError("Invalid phone number !!!")
 
 def username_validator(username):
@@ -38,10 +39,10 @@ def price_validator(price):
     pass
 
 def edition_validator(edition):
-    pass
+    edition=str(edition)
 
 def publisher_validator(publisher):
-    if not re.match(r"^[a-zA-Z\s]{3,30}$", publisher):
+    if not re.match(r"^[a-zA-Zآ-ی\s]{3,30}$", publisher):
         raise ValueError("Invalid publisher !!!")
 
 def number_validator(number):

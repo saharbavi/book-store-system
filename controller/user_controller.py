@@ -39,7 +39,11 @@ class UserController:
     def find_by_user_id(self,user_id):
         try:
             user_repo = UserRepository()
-            return True, user_repo.find_by_user_id(user_id)
+            user=user_repo.find_by_user_id(user_id)
+            if user is None:
+                return True, []
+            else:
+                return True, [user]
         except Exception as e:
             return False, f"error find user_id : {user_id} error : {e}"
 
@@ -50,10 +54,14 @@ class UserController:
         except Exception as e:
             return False, f"error find first_name : {first_name} last_name : {last_name} error : {e}"
 
-    def find_by_username(self,username):
+    def find_by_username(self, username):
         try:
             user_repo = UserRepository()
-            return True, user_repo.find_by_username(username)
+            user = user_repo.find_by_username(username)
+            if user is None:
+                return True, []
+            else:
+                return True, [user]
         except Exception as e:
             return False, f"error find username : {username} error : {e}"
 

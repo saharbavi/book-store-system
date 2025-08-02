@@ -61,7 +61,7 @@ class UserRepository:
 
     def find_by_first_name_last_name(self, first_name,last_name):
         self.connect()
-        self.cursor.execute("SELECT * FROM USER WHERE first_name=? and last_name=?", [first_name,last_name])
+        self.cursor.execute("select * from USER where first_name like ? and last_name like ?", [first_name+"%",last_name+"%"])
         user_list = self.cursor.fetchall()
         self.disconnect()
         return user_list
@@ -76,6 +76,6 @@ class UserRepository:
     def find_by_username_password(self, username,password):
         self.connect()
         self.cursor.execute("SELECT * FROM USER WHERE username=? and password=?", [username,password])
-        user = self.cursor.fetchone()
+        user_list = self.cursor.fetchall()
         self.disconnect()
-        return user
+        return user_list
