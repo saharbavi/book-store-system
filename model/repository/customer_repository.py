@@ -12,7 +12,7 @@ class CustomerRepository:
         self.cursor.close()
         self.connection.close()
 
-    # buttons
+    ## buttons
     def save(self, customer):
         self.connect()
         self.cursor.execute(

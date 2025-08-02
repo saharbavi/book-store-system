@@ -48,7 +48,7 @@ class BookRepository:
         book_list = self.cursor.fetchall()
         self.disconnect()
         return book_list
-
+#
     def find_by_code(self, code):
         self.connect()
         self.cursor.execute("SELECT * FROM BOOK WHERE code=?", [code])

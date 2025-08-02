@@ -58,7 +58,7 @@ class UserRepository:
         user=self.cursor.fetchone()
         self.disconnect()
         return user
-
+#
     def find_by_first_name_last_name(self, first_name,last_name):
         self.connect()
         self.cursor.execute("select * from USER where first_name like ? and last_name like ?", [first_name+"%",last_name+"%"])
