@@ -6,11 +6,18 @@ Book_Store_System:
 مراحل انجام پروژه:
 1.طراحی و تجزیه تحلیل
 2.ساخت پروژه/ پوشه بندی
+
+
 3.entity 1-user/2-book/3-customer
+
 4.repository-test
+
 5.controller_test
+
 6.view
+
 7.final-test
+
 
 
 
